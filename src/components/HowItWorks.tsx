@@ -7,7 +7,7 @@ export default function HowItWorks() {
     <section className="section section-pad work-section" id="how-it-works">
       <Reveal className="section-heading compact">
         <p className="eyebrow">Как работает</p>
-        <h2>От формы до reminder без ручного контроля</h2>
+        <h2>От формы до напоминания без ручного контроля</h2>
       </Reveal>
 
       <div className="timeline-grid">

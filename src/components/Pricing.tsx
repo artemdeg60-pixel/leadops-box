@@ -1,4 +1,4 @@
-import { contacts, pricingPlans } from "../data/siteData";
+import { contacts, pricingNote, pricingPlans } from "../data/siteData";
 import Icon from "./icons";
 import Reveal from "./Reveal";
 
@@ -50,8 +50,7 @@ export default function Pricing() {
       </div>
 
       <Reveal className="pricing-note" delay={0.12}>
-        Для первых клиентов доступны максимально выгодные условия. Финальная
-        стоимость зависит от ниши, количества форм, сценариев и интеграций.
+        {pricingNote}
       </Reveal>
     </section>
   );

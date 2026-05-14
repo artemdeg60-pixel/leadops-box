@@ -7,7 +7,7 @@ const rows = [
   ["Имя", "Мария П.", "Новый"],
   ["Запрос", "2-комн. квартира", "AI"],
   ["Бюджет", "до 18 млн ₽", "Hot"],
-  ["Статус", "не обработан 14 мин", "Reminder"],
+  ["Статус", "не обработан 14 мин", "Напомнить"],
 ];
 
 export default function Hero() {
@@ -62,6 +62,19 @@ export default function Hero() {
             <span key={signal}>{signal}</span>
           ))}
         </motion.div>
+        <motion.div
+          className="hero-badges"
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.44 }}
+        >
+          {heroData.badges.map((badge) => (
+            <span className="hero-badge" key={badge}>
+              <Icon name="Check" size={15} />
+              {badge}
+            </span>
+          ))}
+        </motion.div>
       </div>
 
       <motion.div
@@ -106,7 +119,7 @@ export default function Hero() {
         </div>
         <div className="floating-badge reminder-badge">
           <Icon name="AlarmClockCheck" size={18} />
-          Reminder через 15 мин
+          Напоминание через 15 мин
         </div>
       </motion.div>
     </section>

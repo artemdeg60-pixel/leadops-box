@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { demoCases } from "../data/siteData";
+import { demoCases, inlineCtas } from "../data/siteData";
+import InlineCTA from "./InlineCTA";
 import Icon from "./icons";
 import Reveal from "./Reveal";
 
 type MediaImageProps = {
   src: string;
   label: string;
+  caption?: string;
 };
 
 function MediaImage({ src, label }: MediaImageProps) {
@@ -57,7 +59,7 @@ export default function DemoSection() {
         <h2>Два готовых сценария для дорогих заявок</h2>
         <p>
           Можно посмотреть логику на примере недвижимости и ремонта: от формы до
-          карточки в Telegram, строки в таблице и reminder.
+          карточки в Telegram, строки в таблице и напоминания.
         </p>
       </Reveal>
 
@@ -92,12 +94,17 @@ export default function DemoSection() {
                 >
                   <MediaImage src={shot.path} label={shot.label} />
                 </button>
-                <figcaption>{shot.label}</figcaption>
+                <figcaption>
+                  <strong>{shot.label}</strong>
+                  <span>{shot.caption}</span>
+                </figcaption>
               </figure>
             ))}
           </div>
         </div>
       </Reveal>
+
+      <InlineCTA {...inlineCtas.demo} className="demo-inline-cta" />
 
       {activeShot && (
         <div
