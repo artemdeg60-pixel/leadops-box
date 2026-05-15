@@ -14,8 +14,11 @@ import PilotRequirements from "./components/PilotRequirements";
 import Pricing from "./components/Pricing";
 import ReadyForDemo from "./components/ReadyForDemo";
 import { inlineCtas } from "./data/siteData";
+import useTheme from "./hooks/useTheme";
 
 export default function App() {
+  const { theme, toggleTheme } = useTheme();
+
   useEffect(() => {
     const { hash } = window.location;
 
@@ -30,7 +33,7 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <Header />
+      <Header theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Hero />
         <AudienceCards />

@@ -9,10 +9,12 @@ import {
   LucideIcon,
   Mail,
   Menu,
+  Moon,
   Network,
   PanelTop,
   Send,
   Sparkles,
+  Sun,
   Table2,
   X,
 } from "lucide-react";
@@ -27,10 +29,12 @@ export type IconName =
   | "Hammer"
   | "Mail"
   | "Menu"
+  | "Moon"
   | "Network"
   | "PanelTop"
   | "Send"
   | "Sparkles"
+  | "Sun"
   | "Table2"
   | "X";
 
@@ -44,10 +48,12 @@ export const icons: Record<IconName, LucideIcon> = {
   Hammer,
   Mail,
   Menu,
+  Moon,
   Network,
   PanelTop,
   Send,
   Sparkles,
+  Sun,
   Table2,
   X,
 };

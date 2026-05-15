@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { contacts, navItems } from "../data/siteData";
+import type { Theme } from "../hooks/useTheme";
 import EmailLink from "./EmailLink";
 import Icon from "./icons";
+import ThemeToggle from "./ThemeToggle";
 
-export default function Header() {
+type HeaderProps = {
+  theme: Theme;
+  onToggleTheme: () => void;
+};
+
+export default function Header({ theme, onToggleTheme }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
@@ -27,6 +34,7 @@ export default function Header() {
         <EmailLink className="ghost-link">
           Email
         </EmailLink>
+        <ThemeToggle theme={theme} onToggleTheme={onToggleTheme} />
         <a className="button button-small button-primary" href={contacts.telegramUrl}>
           <Icon name="Send" size={16} />
           Telegram
@@ -50,6 +58,10 @@ export default function Header() {
             </a>
           ))}
           <div className="mobile-nav-actions">
+            <div className="mobile-theme-row">
+              <span>Тема</span>
+              <ThemeToggle theme={theme} onToggleTheme={onToggleTheme} />
+            </div>
             <a className="button button-primary" href={contacts.telegramUrl}>
               Написать в Telegram
             </a>
