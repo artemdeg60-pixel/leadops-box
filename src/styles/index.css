@@ -828,6 +828,10 @@ p {
   gap: 18px;
 }
 
+.pricing-grid {
+  align-items: start;
+}
+
 .audience-card,
 .pricing-card,
 .timeline-step,
@@ -1279,7 +1283,7 @@ p {
 .pricing-card {
   position: relative;
   display: flex;
-  min-height: 500px;
+  min-height: 560px;
   flex-direction: column;
   padding: 24px;
   transition:
@@ -1327,22 +1331,35 @@ p {
 
 .pricing-card ul {
   display: grid;
-  gap: 12px;
+  gap: 0;
   margin: 0 0 26px;
   padding: 0;
   list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--subtle-panel-bg);
 }
 
 .pricing-card li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 11px;
+  min-height: 52px;
+  padding: 12px 13px;
+  border-bottom: 1px solid var(--answer-border);
   color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.pricing-card li:last-child {
+  border-bottom: 0;
 }
 
 .pricing-card li svg {
   flex: 0 0 auto;
-  margin-top: 3px;
+  margin-top: 2px;
   color: var(--gold-2);
 }
 
